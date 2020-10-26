@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer</title>
+</head>
+<script>
+    var a=''
+    const uploadButton = document.querySelector('.browse-btn');
+const fileInfo = document.querySelector('.file-info');
+const realInput = document.getElementById('real-input');
+
+uploadButton.addEventListener('click', (e) => {
+  realInput.click();
+});
+
+realInput.addEventListener('change', () => {
+  const name = realInput.value.split(/\\|\//).pop();
+  const truncated = name.length > 20
+    ? name.substr(name.length - 20)
+    : name;
+
+  fileInfo.innerHTML = truncated;
+});
+    function call(id)
+    {
+
+        txt=document.getElementById(id).value
+        d1=new Date(txt)
+        alert(d1)
+
+        y=d1.getFullYear();
+        m=d1.getMonth()+1
+        d=d1.getDate()
+        var d2=new Date(y+1,m,d);
+        alert(d2)
+        y=d2.getFullYear();
+		m=d2.getMonth()+1
+        d=d2.getDate()
+        g.value=y+"-"+m+"-"+d;
+        h.value='Valid'
+
+
+    }
+</script>
+<body>
+<form action="/customer" method='post' enctype="multipart/form-data"> {% csrf_token %}
+<table>
+<caption><b>Customer Account Register<b></caption>
+<tr>
+<td><i><b>Account No:</b></i></td>
+<td><input type="text"  id="b" name="ab"></td>
+</tr>
+<tr>
+<td><i><b>Name:</b></i></td>
+<td>
+<input type="text" id="c" name="ac">
+<input type="text" id="d" name="ad">
+</td>
+</tr>
+<tr>
+<td><i><b>Birth Date:</b></i></td>
+<td><input type="date" id="e" placeholder="dd-mm-yy" name="ae">
+</tr>
+<tr>
+<td><i><b>Assign Date:</b></i></td>
+<td><input type="date" id="f" onchange="call(id)" placeholder="dd-mm-yy" name="af">
+</td>
+</tr>
+<tr>
+<td><i><b>Validity Date:</b></i></td>
+
+<td><input type="date" id="g" readonly name="ag"></td>
+</tr>
+<tr>
+<td><i><b>Status:</b></i></td>
+<td>
+<input type="text" id="h" readonly name="ah"></td>
+</tr>
+<tr>
+<td><i><b>Gender:</b></i></td>
+<td><input type="radio" name="aa" id="i" value="Male" >Male<input type="radio" name="aa" id="j"  value="Female">Female
+</td>
+</tr>
+
+<tr>
+<td><i><b>Email:</b></i></td>
+<td><input type="text" id="k" name="ak">
+</td>
+</tr>
+<tr>
+<td><i><b>Mobile Number:</b></i></td>
+
+<td><input type="text" id="l" name="al" pattern="{0,9}[10]">
+</td>
+</tr>
+<tr>
+<td><i><b>Password:</b></i></td>
+<td><input type="password" id="m" name="am"></td>
+</tr>
+<tr>
+<td><i><b>Pin:</b></i></td>
+<td><input type="password" id="n" name="an"></td>
+</tr>
+<tr>
+    <td><i><b>Picture:</b></i></td>
+    <td><input type="file" id="n" name="pic"></td>
+    </tr>
+</table>
+    
+   <br>
+    <input type="submit">
+</form>
+
+
+</body>
+</html>

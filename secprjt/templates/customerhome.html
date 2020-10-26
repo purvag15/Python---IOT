@@ -1,0 +1,13 @@
+<html>
+    <h2>{{request.session.SES_CUST.6}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{request.session.SES_CUST.1}} {{request.session.SES_CUST.2}}&nbsp;&nbsp;&nbsp;&nbsp; {{request.session.SES_LOGINTIME}}&nbsp;&nbsp;&nbsp;&nbsp<img src='/static/{{request.session.SES_CUST.12}}' width='30' height='30'></h2><hr color='red'>
+    <table>
+        <tr>
+           <td valign='top'><a href='/change_password' target='mw'>Change Password</a><br>
+           <a href="/change_pin" target='mw'>Change Pin</a><br>
+           <a href='/keypad' target='mw'>Keypad</a><br>
+           <a href='/cust_logout' target='_parent'>Logout</a><br></td>
+           <td><iframe name='mw' width='600' height='800' frameborder='0'></iframe></td>
+            
+        </tr>
+    </table>
+</html>

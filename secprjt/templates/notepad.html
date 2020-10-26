@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KEYPAD</title>
+</head>
+<script>
+    var c=''
+    var l=0
+function Call(id)
+{
+    txt=document.getElementById(id)
+    c=c+txt.value
+    result.value=c
+    if(c.length>4)
+    {
+        show.innerHTML="<font color='red'><center>///ERROR\\\\\\<br>**** SHOULD CONTAIN 4 DIGITS ONLY****</center></font>"
+    }
+    else
+    {
+        show.innerHTML=''
+    }
+}
+function back()
+{
+    l=c.length
+    c=c.substr(0,l-1)
+    result.value=c
+    if(c.length>4)
+    {
+        show.innerHTML="<font color='red'><center>///ERROR\\\\\\<br>**** SHOULD CONTAIN 4 DIGITS ONLY****</center></font>"
+    }
+    else
+    {
+        show.innerHTML=''
+    }
+}
+function Remove()
+{
+    c=''
+    result.value=c
+    show.innerHTML=''
+}
+</script>
+<body>
+ <form action='/check_pin'>
+ <input type='text' name='pin' id='result'><br><br>
+
+    <table>
+    <tr>
+        <th><input type='button' value='1' onclick="Call(id)" id="a"></th>
+        <th><input type='button' value='2' onclick="Call(id)" id="b"> </th>
+        <th><input type='button' value='3' onclick="Call(id)" id="c"></th>
+    </tr>
+    <tr>
+        <th><input type='button' value='4' onclick="Call(id)" id="d"></th>
+        <th><input type='button' value='5' onclick="Call(id)" id="e"> </th>
+        <th><input type='button' value='6' onclick="Call(id)" id="f"></th>
+    </tr>
+    <tr>
+        <th><input type='button' value='7' onclick="Call(id)" id="g"></th>
+        <th><input type='button' value='8' onclick="Call(id)" id="h"> </th>
+        <th><input type='button' value='9' onclick="Call(id)" id="i"></th>
+    </tr>
+    <tr>
+        <th><input type='button' value='*' onclick="Call(id)" id="j"></th>
+        <th><input type='button' value='0' onclick="Call(id)" id="k"> </th>
+        <th><input type='button' value='#' onclick="Call(id)" id="l"></th>
+    </tr>
+       <tr>
+        <th><input type='button' value='Back Space' onclick="back()"></th>
+        <th><input type="reset" onclick="Remove()"> </th>
+    </tr>
+
+</table>
+<br>
+<input type='Submit' value='Submit Pin'>
+</form>
+<div id="show">
+
+</div>
+    
+</body>
+</html>

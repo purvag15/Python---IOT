@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EMPLOYEE HOME</title>
+</head>
+<body>
+    
+<form action="/employee_home">
+
+<h2>{{request.session.SES_EMP.5}}&nbsp;&nbsp;&nbsp;&nbsp;{{request.session.SES_EMP.1}} &nbsp;&nbsp;&nbsp;&nbsp;{{ request.session.SES_LOGINTIME }}</h2><hr color="red">
+<center>
+<table>
+    <tr>
+        <td>
+            Enter Acc No.
+        </td>
+        <td>
+            <input type="text" name="acc">
+        </td>
+        <td><input type="submit"></td>
+    </tr>
+</table>
+    
+</form>
+<br><br>
+<table border='1' width='80%'>
+<tr><td>First Name:</td><td>{{ fn }}</td>
+<td>Last Name:</td><td>{{ ln }}</td></tr>
+
+<tr><td>DOB:</td><td>{{ dob }}</td>
+    <td>Gender:</td><td>{{ gen }}</td></tr>
+    
+<tr><td>Mobile:</td><td>{{ mob }}</td>
+      <td>Email:</td><td>{{ em }}</td></tr>
+
+<tr><td>Assign Date:</td><td>{{ ad }}</td>
+        <td>Validity:</td><td>{{ vd }}</td></tr>
+ <tr><td>Status:</td><td>{{ st }}</td>
+            <td>Password</td><td>**</td></tr>
+ </table>
+
+ <form action="/employee_customer">
+    <table border="2">
+        <tr>
+            <td>
+    
+            </td>
+        </tr>
+        <tr>
+            <td>First Name: {{ fn }}</td>
+            <td>Last Name:{{ ln }}</td>
+        </tr>
+        <tr>
+            <td>DOB: {{ dob }}</td>
+            <td>Gender: {{ gen }}</td>
+        </tr>
+        <tr>
+             <td>Mobile: {{ mob }}</td>
+             <td>Email: {{ em }}<input type='hidden' name='cust_email' value={{em}}></td>
+        </tr>
+        <tr>
+    
+            <td>Assign Date: {{ ad }}</td>
+            <td>Validity Date: {{ vd }}</td>
+        </tr>
+        <tr>Status: <input type="radio" name="status"  value="Allow" >Allow<input type="radio" name="status"  value="Not Allow">Not Allow
+        </tr>
+    </table>
+        <input type="submit" value="Checked">
+    </form>
+    {{ jop }}
+</body>
+</html>
