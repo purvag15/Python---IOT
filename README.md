@@ -1,2 +1,3 @@
 # Python-IOT
 It includes automation of bank locker system using Django, PyMySQL, IOT (Raspberry Pi), Cloud Pubnub technologies.
+Python, Django was used to make backend of website. The basic idea was of remote unlocking of bank lockers in case of emergency, and if a person wants to get some item from his locker, instead of himself going to the bank he can send someone to do the task, and open the lock himself by using this website and entering pin. Customer has to enter the pin, and after this, if the bank staff approves the pin, the locker will open.Raspberry pi was connected to circuits to unlock the lock.
